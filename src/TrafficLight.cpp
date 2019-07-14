@@ -82,8 +82,13 @@ void TrafficLight::cycleThroughPhases() {
       std::this_thread::sleep_for(std::chrono::milliseconds(1));
       _currentPhase = (_currentPhase == TrafficLight::green)
         ? TrafficLight::red : TrafficLight::green;
-      // TODO
-      // update method to the message queue using move semantics
+      TrafficLightPhase msg = _currentPhase;
+      std::async(
+        std::launch::async,
+        &MessageQueue<TrafficLightPhase>::send,
+        _mq,
+        std::move(msg)
+      );
     }
     ++_loop_cnt;
     std::random_device seed;
