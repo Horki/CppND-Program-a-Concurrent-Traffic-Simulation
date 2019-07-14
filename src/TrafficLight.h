@@ -53,7 +53,6 @@ private:
   std::condition_variable _condition;
   std::mutex _mutex;
   enum TrafficLightPhase _currentPhase;
-  int _loop_cnt = 0;
   std::shared_ptr<MessageQueue<TrafficLightPhase>> _mq{
     new MessageQueue<TrafficLightPhase>
   };
