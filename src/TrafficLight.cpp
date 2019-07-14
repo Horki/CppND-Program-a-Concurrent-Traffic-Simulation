@@ -81,14 +81,15 @@ void TrafficLight::cycleThroughPhases() {
   std::random_device randomDevice;
   std::mt19937 veanlg(randomDevice());
   std::uniform_int_distribution<int> distr(4000, 6000);
+  int cycleDuration = distr(veanlg);
   while (true) {
     std::this_thread::sleep_for(std::chrono::milliseconds(1));
-    int cycleDuration = distr(veanlg);
     int lastUpdatedTime =
       std::chrono::duration_cast<std::chrono::milliseconds>
       (std::chrono::system_clock::now() - lastUpdate).count();
     if (lastUpdatedTime >= cycleDuration) {
       std::cout << "Toggle traffic light\n";
+      cycleDuration = distr(veanlg);
       lastUpdate = std::chrono::system_clock::now();
       _currentPhase = (_currentPhase == TrafficLightPhase::green) ?
         TrafficLightPhase::red : TrafficLightPhase::green;
