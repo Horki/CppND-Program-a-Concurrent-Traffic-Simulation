@@ -20,9 +20,9 @@ class MessageQueue {
 public:
   void send(T && msg);
   T receive();
-  std::deque<T> _queue;
 private:
-  std::mutex _mutex;
+  std::deque<T>               _queue;
+  std::mutex                  _mutex;
   std::condition_variable _condition;
 };
 
