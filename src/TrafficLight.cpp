@@ -61,7 +61,7 @@ void TrafficLight::waitForGreen() {
 }
 
 
-TrafficLight::TrafficLightPhase TrafficLight::getCurrentPhase() {
+TrafficLightPhase TrafficLight::getCurrentPhase() {
   return _currentPhase;
 }
 
@@ -80,8 +80,8 @@ void TrafficLight::cycleThroughPhases() {
     if (_loop_cnt == 2) {
       _loop_cnt = 0;
       std::this_thread::sleep_for(std::chrono::milliseconds(1));
-      _currentPhase = (_currentPhase == TrafficLight::green)
-        ? TrafficLight::red : TrafficLight::green;
+      _currentPhase = (_currentPhase == TrafficLightPhase::green)
+        ? TrafficLightPhase::red : TrafficLightPhase::green;
       TrafficLightPhase msg = _currentPhase;
       std::async(
         std::launch::async,
