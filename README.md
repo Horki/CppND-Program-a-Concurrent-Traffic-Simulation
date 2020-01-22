@@ -33,7 +33,7 @@ git clone https://github.com/Horki/CppND-Program-a-Concurrent-Traffic-Simulation
 2. Make a build directory in the top level directory: `mkdir build && cd build`
 3. Build with conan. `conan install .. --build missing -s compiler.libcxx=libstdc++11`
 4. Compile: `cmake .. && make`
-5. Run it: `./traffic_simulation`.
+5. Run it: `./bin/traffic_simulation`.
 
 ## Project Tasks
 
