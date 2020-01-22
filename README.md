@@ -19,13 +19,21 @@ Throughout the Concurrency course, you have been developing a traffic simulation
   * Linux: gcc / g++ is installed by default on most Linux distros
   * Mac: same deal as make - [install Xcode command line tools](https://developer.apple.com/xcode/features/)
   * Windows: recommend using [MinGW](http://www.mingw.org/)
+* conan
+  * All OSes: [click here for installation instructions](https://docs.conan.io/en/latest/installation.html)
 
 ## Basic Build Instructions
 
 1. Clone this repo.
+
+```bash
+git clone https://github.com/Horki/CppND-Program-a-Concurrent-Traffic-Simulation
+```
+
 2. Make a build directory in the top level directory: `mkdir build && cd build`
-3. Compile: `cmake .. && make`
-4. Run it: `./traffic_simulation`.
+3. Build with conan. `conan install .. --build missing -s compiler.libcxx=libstdc++11`
+4. Compile: `cmake .. && make`
+5. Run it: `./traffic_simulation`.
 
 ## Project Tasks
 
@@ -53,6 +61,6 @@ Task FP.4 | Done
 Task FP.5 | Done
 Task FP.6 | Done
 
-
 ## Running "Concurrent Traffic Simulation"
+
 <img src="img/Concurrent-Traffic-Simulation.gif"/>
