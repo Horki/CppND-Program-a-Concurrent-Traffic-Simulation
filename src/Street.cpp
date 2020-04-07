@@ -1,11 +1,13 @@
-#include <iostream>
-#include "Vehicle.h"
-#include "Intersection.h"
 #include "Street.h"
+
+#include <iostream>
+
+#include "Intersection.h"
+#include "Vehicle.h"
 
 Street::Street() {
   _type = ObjectType::objectStreet;
-  _length = 1000.0; // in m
+  _length = 1000.0;  // in m
 }
 
 void Street::setInIntersection(std::shared_ptr<Intersection> in) {

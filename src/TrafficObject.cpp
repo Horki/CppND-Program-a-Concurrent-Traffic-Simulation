@@ -1,8 +1,8 @@
-#include <algorithm>
-#include <iostream>
-#include <chrono>
-#include <algorithm>
 #include "TrafficObject.h"
+
+#include <algorithm>
+#include <chrono>
+#include <iostream>
 
 // init static variable
 int TrafficObject::_idCnt = 0;
@@ -26,7 +26,6 @@ TrafficObject::TrafficObject() {
 
 TrafficObject::~TrafficObject() {
   // set up thread barrier before this object is destroyed
-  std::for_each(threads.begin(), threads.end(), [](std::thread &t) {
-    t.join();
-  });
+  std::for_each(threads.begin(), threads.end(),
+                [](std::thread &t) { t.join(); });
 }
