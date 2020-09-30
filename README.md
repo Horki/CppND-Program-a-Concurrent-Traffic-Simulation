@@ -52,14 +52,12 @@ When the project is built initially, all traffic lights will be green. When you 
 
 ## Tasks
 
-Exercise Name | Status
---- | ---
-Task FP.1 | Done
-Task FP.2 | Done
-Task FP.3 | Done
-Task FP.4 | Done
-Task FP.5 | Done
-Task FP.6 | Done
+- [x] Task FP.1
+- [x] Task FP.2
+- [x] Task FP.3
+- [x] Task FP.4
+- [x] Task FP.5
+- [x] Task FP.6
 
 ## Running "Concurrent Traffic Simulation"
 
